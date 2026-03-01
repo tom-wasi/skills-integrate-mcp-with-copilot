@@ -16,12 +16,48 @@ body {
 }
 
 header {
+  position: relative;
   text-align: center;
   padding: 20px 0;
   margin-bottom: 30px;
   background-color: #1a237e;
   color: white;
   border-radius: 5px;
+}
+
+#teacher-controls {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  text-align: right;
+}
+
+#user-menu-toggle {
+  background-color: white;
+  color: #1a237e;
+  padding: 8px 10px;
+  border-radius: 999px;
+}
+
+#user-menu {
+  margin-top: 8px;
+  background-color: white;
+  border: 1px solid #d9def4;
+  border-radius: 8px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 120px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+#user-menu.hidden {
+  display: none;
+}
+
+#user-menu button {
+  width: 100%;
 }
 
 header h1 {
@@ -164,6 +200,11 @@ button:hover {
   background-color: #3949ab;
 }
 
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 .message {
   margin-top: 20px;
   padding: 10px;
@@ -190,6 +231,35 @@ button:hover {
 
 .hidden {
   display: none;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 20;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  width: 100%;
+  max-width: 380px;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
 }
 
 footer {
